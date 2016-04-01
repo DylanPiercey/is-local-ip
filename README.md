@@ -1,4 +1,4 @@
-# Is Local IP
+# is-local-ip
 Check that a given IP Address is private.
 
 
@@ -20,7 +20,7 @@ isLocal("192.168.0.12"); // true
 isLocal("184.55.123.2"); // false
 ```
 
-# Valid Private IPS
+# Valid Private IP'S
 * `::`
 * `::1`
 * `fe80::1`
