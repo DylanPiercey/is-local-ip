@@ -31,6 +31,6 @@ isLocal("184.55.123.2"); // false
 
 ### Contributions
 
-* Use gulp to run tests.
+* Use `npm test` to run tests.
 
 Please feel free to create a PR!
