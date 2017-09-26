@@ -16,7 +16,7 @@ test('fe80::/10', function (t) {
   t.ok(isLocalIp('fe80::1'), 'yes fe80::1')
   t.ok(isLocalIp('febf::1'), 'yes febf::1')
   t.ok(isLocalIp('fe80:0000:0000:0000:0000:0000:0000:0000'), 'yes fe80:0000:0000:0000:0000:0000:0000:0000')
-  t.notOk(isLocalIp('fc00::1'), 'no fc00::1')
+  t.notOk(isLocalIp('ff00::1'), 'no ff00::1')
 })
 
 test('10.x.x.x', function (t) {
@@ -73,10 +73,10 @@ test('169.254.(1-254).x', function (t) {
   t.notOk(isLocalIp('169.254.255.0'), 'no 169.254.255.0')
 })
 
-test('fd00::/8', function (t) {
+test('fc00::/7', function (t) {
   t.plan(5)
-  t.notOk(isLocalIp('fc00::1'), 'no fc00::1')
-  t.ok(isLocalIp('fd00::1'), 'yes fd00::1')
+  t.notOk(isLocalIp('fb00::1'), 'no fb00::1')
+  t.ok(isLocalIp('fc00::1'), 'yes fc00::1')
   t.ok(isLocalIp('fdff::1'), 'yes fdff::1')
   t.ok(isLocalIp('fdaa:0000:0000:0000:0000:0000:0000:0000'), 'yes fdaa:0000:0000:0000:0000:0000:0000:0000')
   t.notOk(isLocalIp('fe00::1'), 'no fe00::1')
