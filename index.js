@@ -3,7 +3,7 @@
 module.exports = isLocalIp
 
 // Matches all local ip ranges.
-var localRanges = [
+var RANGES = [
   // 10.0.0.0 - 10.255.255.255
   /^(::f{4}:)?10\.\d{1,3}\.\d{1,3}\.\d{1,3}/,
   // 127.0.0.0 - 127.255.255.255
@@ -27,16 +27,6 @@ function isLocalIp (address) {
   return (
     address === '::' ||
     address === '::1' ||
-    isIpInRanges(localRanges, address)
+    RANGES.some(function (it) { return it.test(address) })
   )
-}
-
-/**
- * Check if IP is in any of the provided ranges
- * @param {RegExp[]} ranges
- * @param address
- * @returns {boolean}
- */
-function isIpInRanges (ranges, address) {
-  return ranges.reduce(function (isLocal, range) { return isLocal || range.test(address) }, false)
 }
